@@ -13,7 +13,6 @@ import Spinner from '../../../UI/Spinner/Spinner'
 import * as actions from '../../../../store/actions/actions'
 import { Redirect } from 'react-router'
 
-
 const uiConfig = {
     signInFlow: "popup",
     signInOptions: [
@@ -24,36 +23,32 @@ const uiConfig = {
     }
 }
 
-function RegisterForm(props) {
+function LoginForm(props) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [passwordConfirm, setPasswordConfirm] = useState("")
 
     const updateHandler = (event) => {
         event.preventDefault()
 
         if (email.length > 0 &&
-            password.length > 0 &&
-            passwordConfirm.length > 0) {
-            if (password === passwordConfirm) {
-                props.emailRegister(email, password)
-            }
-            else {
-                props.emailRegisterFail("Password and Password Confirmation must match")
-            }
+            password.length > 0) {
+            props.emailAuth(email, password)
         } else {
-            props.emailRegisterFail("Please fill up all fields")
+            props.emailAuthFail("Please fill up all fields")
         }
     }
 
     return (
         <div>
             {props.registered ?
-                <Redirect to="/login" /> : null}
+                <Redirect to="/Adminlogin" /> : null}
             {props.isLoading ? <Spinner /> :
                 <>
+                
                     <form onSubmit={updateHandler}>
+                    
                         <Input
+                            size = {20} 
                             val={email}
                             onChangeFunc={setEmail}
                             placeholder="Email"
@@ -65,16 +60,9 @@ function RegisterForm(props) {
                             placeholder="Password"
                             type="password"
                         />
-                        <Input
-                            val={passwordConfirm}
-                            onChangeFunc={setPasswordConfirm}
-                            placeholder="Confirm Password"
-                            type="password"
-                        />
                         {props.error ? <ErrorDisplay>
                             {props.error}
                         </ErrorDisplay> : null}
-
 
                         <div align="center">
                             {/* 
@@ -83,24 +71,14 @@ function RegisterForm(props) {
                             </p>*/}
                         
                         <p>
-                            <Button>
-                                Register
-                            </Button>{' '}
-                            <Link to="/login"><Button>
-                                Sign In
-                            </Button></Link>
+                        
+                        <Button>
+                            Sign In
+                        </Button>{' '}
+                        
                         </p>
                         </div>
                     </form>
-                    {/* <div align="center">
-                        <strong>
-                            OR
-                        </strong>
-                    </div>
-
-                    <StylizedFirebaseAuth
-                        uiConfig={uiConfig}
-                        firebaseAuth={firebase.auth()} />*/}
                 </>}
         </div>
     )
@@ -112,8 +90,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    emailRegister: (email, password) => dispatch(actions.emailRegister(email, password)),
-    emailRegisterFail: (error) => dispatch(actions.emailRegisterFail(error))
+    emailAuth: (email, password) => dispatch(actions.emailAuth(email, password)),
+    emailAuthFail: (error) => dispatch(actions.emailAuthFail(error))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(RegisterForm)
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)

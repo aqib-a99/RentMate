@@ -24,9 +24,6 @@ function Navlinks(props) {
                     <NavLink exact to="/login" className={style.NavLink} activeClassName={style.NavLinkActive}>
                         Log In
                     </NavLink>
-                    <NavLink exact to="/register" className={style.NavLink} activeClassName={style.NavLinkActive}>
-                        Register
-                    </NavLink>
                 </>
             }
         </div>

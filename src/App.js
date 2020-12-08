@@ -23,6 +23,7 @@ const Orders = lazy(() => import('./components/Pages/Orders/Orders'))
 const Privacy = lazy(() => import('./components/Pages/Privacy/Privacy'))
 const Register = lazy(() => import('./components/Pages/Register/Register'))
 const Terms = lazy(() => import('./components/Pages/Terms/Terms'))
+const AdminLogin = lazy(() => import('./components/Pages/Login/AdminLogin'))
 
 function App(props) {
   useEffect(() => {
@@ -49,6 +50,7 @@ function App(props) {
             <Route path="/terms-and-conditions" component={Terms} />
             <Route path="/login" component={Login} />
             <Route path="/logout" component={Logout} />
+            <Route path="/Adminlogin" component={AdminLogin} />
             <Route component={Error404} />
           </Switch>
         </Layout>

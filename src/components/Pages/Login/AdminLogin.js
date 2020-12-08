@@ -1,24 +1,24 @@
 import React from 'react'
-import { Redirect } from 'react-router'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router'
 
 import PageTitle from '../../UI/PageTitle/PageTitle'
-import RegisterForm from './RegisterForm/RegisterForm'
+import LoginForm from './LoginForm/AdminLoginForm'
 
 import commonStyle from '../../../static/style/common.module.css'
 
-function Register(props) {
+function Login(props) {
     return (
         <div className={`my-5 pt-2 container ${commonStyle.PageBody}`}>
             {props.user ? <Redirect to="/menu" /> : null}
 
             <div align="center">
             <PageTitle>
-                Sign Up
+                Employee Login
             </PageTitle>
             </div>
 
-            <RegisterForm />
+            <LoginForm />
         </div>
     )
 }
@@ -27,4 +27,4 @@ const mapStateToProps = state => ({
     user: state.auth.user
 })
 
-export default connect(mapStateToProps)(Register)
+export default connect(mapStateToProps)(Login)

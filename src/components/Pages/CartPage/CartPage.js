@@ -20,17 +20,17 @@ function CartPage(props) {
             {props.cart.length === 0 ?
                 <Redirect to="./menu" /> : null}
             <PageTitle>
-                Cart
+                <p align = "center">CART</p>
             </PageTitle>
             <div className="mt-2">
                 {display}
             </div>
             <div className="my-3">
-                <strong>Price: ₹ {props.price}</strong>
+                <strong>Price: ${props.price}</strong>
                 <br />
-                <strong>GST: ₹ {props.gst} (rate: {GST_RATE * 100}%)</strong>
+                <strong>Tax: ${props.gst}, (rate: {.06 * 100}%)</strong>
                 <br />
-                <strong>Total Price: ₹ {props.price + props.gst}</strong>
+                <strong>Total: ${props.price + props.gst}</strong>
             </div>
             <Link to="/checkout">
                 <Button>

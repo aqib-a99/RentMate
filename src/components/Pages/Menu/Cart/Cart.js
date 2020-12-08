@@ -18,12 +18,9 @@ function Cart(props) {
     return (
         <>
             <div className={`mt-4 ${style.Body}`}>
-                <h1 className="my-2 mx-2">Cart</h1>
+                <h3 className="my-2 mx-2" align="center">Cart</h3>
                 <div className="mx-2">
                     {props.cart.length > 0 ?
-                        //     <button className={`my-2 mx-2 btn btn-danger ${style.ClearCartBtn}`} onClick={props.clearCart}>
-
-                        // </button>
                         <span className={`my-2 mx-2 ${style.ClearCartBtn}`}>
                             <Button onClick={props.clearCart} type={BtnTypes.DANGER}>
                                 Clear Cart
@@ -32,8 +29,8 @@ function Cart(props) {
                         : <div className={style.EmptyBody}>
                             <i className="fa fa-shopping-cart" aria-hidden="true" />
                             <span>
-                                Cart is Empty!
-                    </span>
+                                <h3>Cart is Empty!</h3>
+                            </span>
                         </div>}
                 </div>
                 {props.cart.length > 0 ?
@@ -42,7 +39,7 @@ function Cart(props) {
                             {display}
                         </div>
                         <div className={style.CartUtil}>
-                            <strong className={`mx-2 ${style.Price}`}> Total: ₹ {props.price}</strong>
+                            <strong className={`mx-2 ${style.Price}`} align = "center"> Total: ${props.price}</strong>
                             <Link to="/cart">
                                 <button className={style.CheckoutBtn}>
                                     GO TO CART
@@ -50,7 +47,8 @@ function Cart(props) {
                             </Link>
                         </div>
                     </> : null}
-            </div>
+                </div>
+ 
             {props.cart.length > 0 ?
                 <Link to="/cart">
                     <div className={style.BodyMobile}>

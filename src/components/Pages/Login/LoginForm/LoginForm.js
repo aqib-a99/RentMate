@@ -13,7 +13,6 @@ import Spinner from '../../../UI/Spinner/Spinner'
 import * as actions from '../../../../store/actions/actions'
 import { Redirect } from 'react-router'
 
-
 const uiConfig = {
     signInFlow: "popup",
     signInOptions: [
@@ -45,8 +44,11 @@ function LoginForm(props) {
                 <Redirect to="/login" /> : null}
             {props.isLoading ? <Spinner /> :
                 <>
+                
                     <form onSubmit={updateHandler}>
+                    
                         <Input
+                            size = {20} 
                             val={email}
                             onChangeFunc={setEmail}
                             placeholder="Email"
@@ -62,14 +64,27 @@ function LoginForm(props) {
                             {props.error}
                         </ErrorDisplay> : null}
 
-                        <p className="font-weight-bold my-2">
+                        <div align="center">
+                            {/* 
+                            <p className="font-weight-bold my-2">
                             Not yet registered? <Link to="/register">Register</Link>
-                        </p>
-
+                            </p>*/}
+                        
+                        <p>
+                        
                         <Button>
-                            Login
-                    </Button>
+                            Sign In
+                        </Button>{' '}
+                        <Link to="/register"><Button>
+                            Sign Up
+                        </Button></Link>
+                        
+            
+                        </p>
+                        </div>
+                        
                     </form>
+
                     <div align="center">
                         <strong>
                             OR

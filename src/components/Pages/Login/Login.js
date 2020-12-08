@@ -12,9 +12,11 @@ function Login(props) {
         <div className={`my-5 pt-2 container ${commonStyle.PageBody}`}>
             {props.user ? <Redirect to="/menu" /> : null}
 
+            <div align="center">
             <PageTitle>
-                Login
+                User Login
             </PageTitle>
+            </div>
 
             <LoginForm />
         </div>

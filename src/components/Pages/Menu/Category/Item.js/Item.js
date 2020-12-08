@@ -29,7 +29,7 @@ function Item(props) {
                 <div className="row">
                     <div className={`mb-2 ${style.Row}`}>
                         <span className={`my-auto font-weight-light ${style.Price}`}>
-                            <strong>₹</strong> {price}
+                            <strong>$</strong> {price}
                         </span>
                         <div className={`my-auto ml-auto ${style.BtnHolder}`}>
                             <button className={style.ItemActionBtn} onClick={() => props.removeItemFromCart(item)}>
