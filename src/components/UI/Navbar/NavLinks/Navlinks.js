@@ -10,13 +10,10 @@ function Navlinks(props) {
             <NavLink exact to="/" className={style.NavLink} activeClassName={style.NavLinkActive}>
                 Home
             </NavLink>
-            <NavLink exact to="/menu" className={style.NavLink} activeClassName={style.NavLinkActive}>
-                Menu
+            <NavLink exact to="/listing" className={style.NavLink} activeClassName={style.NavLinkActive}>
+                Listing
             </NavLink>
             {props.user ? <>
-                <NavLink exact to="/orders" className={style.NavLink} activeClassName={style.NavLinkActive}>
-                    Orders
-                </NavLink>
                 <NavLink exact to="/logout" className={style.NavLink} activeClassName={style.NavLinkActive}>
                     Log Out
                 </NavLink>
