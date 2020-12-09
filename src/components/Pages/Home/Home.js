@@ -18,7 +18,7 @@ function Home() {
                 <div className="container mt-5 pt-5">
                     <h2 className={style.H2}>RentMate</h2>
                     <h1 className={style.H1}>Car Rentals, Redefined.</h1>
-                    <Link to="/menu">
+                    <Link to="/listing">
                         <Button>
                             Rent A Ride
                         </Button>

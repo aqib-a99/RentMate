@@ -75,7 +75,7 @@ function Checkout(props) {
                                 Order Placed
                             </PageTitle>
                             <h1 className="display-6 mt-4">
-                                Your yummy pizza will arrive at your doorstep soon! :)
+                                Your order information has been sent to your email! :)
                             </h1>
                         </div>
                         : <>
