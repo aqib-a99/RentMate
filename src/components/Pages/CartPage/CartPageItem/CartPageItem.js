@@ -30,7 +30,7 @@ function CartPageItem(props) {
                     </div>
                     <div className="row mt-2">
                         <div className={style.Price}>
-                            Price: ₹ {price}
+                            Price: $ {price}
                         </div>
                         <div className={`my-auto ml-auto d-inline-block ${style.BtnHolder}`}>
                             <button className={style.ItemActionBtn} onClick={() => props.removeItemFromCart(item)}>

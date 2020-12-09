@@ -14,9 +14,9 @@ function Footer(props) {
                 <div className="row">
                     <div className="col-lg-8 row">
                         <div className={`my-4 ${style.FooterSection}`}>
-                            <h2 className={style.H2}>
+                            <h3 className={style.H2}>
                                 Company
-                            </h2>
+                            </h3>
                             <div className={style.LinksContainer}>
                                 <Link className={`${style.Link} ${style.TextLink}`} to="/about">
                                     About Us
@@ -31,9 +31,9 @@ function Footer(props) {
                         </div>
 
                         <div className={`my-4 ${style.FooterSection}`}>
-                            <h2 className={style.H2}>
+                            <h3 className={style.H2}>
                                 Legal
-                            </h2>
+                            </h3>
                             <div className={style.LinksContainer}>
                                 <Link className={`${style.Link} ${style.TextLink}`} to="/terms-and-conditions">
                                     Terms & Conditions
@@ -46,12 +46,26 @@ function Footer(props) {
                                 </Link>
                             </div>
                         </div>
+
+                        <div className={`my-4 ${style.FooterSection}`}>
+                            <h3 className={style.H2}>
+                                Employee
+                            </h3>
+                            <div className={style.LinksContainer}>
+                                <Link className={`${style.Link} ${style.TextLink}`} to="/Adminlogin">
+                                    Employee Login
+                                </Link>
+                            </div>
+                        </div>
+
                     </div>
 
+                
+
                     <div className="col-lg-4 my-4">
-                        <h2 className={`text-center ${style.H2}`}>
+                        <h3 className={`text-center ${style.H2}`}>
                             Social Media
-                        </h2>
+                        </h3>
                         <div className={style.Row}>
                             <a className={style.Link} href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
                                 <div className={`${style.SocialMediaBtn} ${style.FaceBook}`}>
@@ -79,7 +93,7 @@ function Footer(props) {
                 <div className={`mb-2 ${style.Row}`}>
                     <span
                         className={`${style.Copyright} ${location.pathname === "/menu" && cart.length > 0 ? style.ExtraPadding : null}`}>
-                        Copyright © {new Date().getFullYear()} Tap FoodWorks Ltd. | All Rights Reserved
+                        Copyright © {new Date().getFullYear()} RentMate CO. | All Rights Reserved
                     </span>
                 </div>
             </div>
